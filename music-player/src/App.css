@@ -1,0 +1,143 @@
+.App {
+  text-align: center;
+  color: #fff;
+  background-color: #121212;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.player-container {
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cover-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.song-details {
+  text-align: left;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+button.active {
+  background-color: #444;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Existing Styles */
+input[type="range"].wave-slider {
+  appearance: none;
+  background: repeating-linear-gradient(
+    90deg,
+    #3f51b5,
+    #3f51b5 2px,
+    #1e1e1e 2px,
+    #1e1e1e 4px
+  );
+  border-radius: 5px;
+  height: 8px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slider Thumb */
+input[type="range"].wave-slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  background: #3f51b5;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Sine Wave Effect */
+input[type="range"].wave-slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path d="M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5" fill="transparent" stroke="%233f51b5" stroke-width="2"/></svg>');
+  background-size: 50% 100%;
+  animation: sineWave 2s linear infinite;
+  z-index: 1;
+}
+
+/* Animation for the Sine Wave */
+@keyframes sineWave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+.volume-container {
+  display: flex;
+  align-items: center;
+}
+
+.volume-container label {
+  margin-right: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
